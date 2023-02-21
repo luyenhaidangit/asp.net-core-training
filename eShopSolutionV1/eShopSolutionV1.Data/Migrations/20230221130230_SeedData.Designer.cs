@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using eShopSolutionV1.Data.EntityFrameworkCore;
 
@@ -11,9 +12,10 @@ using eShopSolutionV1.Data.EntityFrameworkCore;
 namespace eShopSolutionV1.Data.Migrations
 {
     [DbContext(typeof(EShopSolutionDbContext))]
-    partial class EShopSolutionDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230221130230_SeedData")]
+    partial class SeedData
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
