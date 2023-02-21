@@ -1,4 +1,6 @@
-﻿using eShopSolutionV1.Model.Models;
+﻿using eShopSolution.Data.Configurations;
+using eShopSolutionV1.Data.Configurations;
+using eShopSolutionV1.Model.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -15,8 +17,16 @@ namespace eShopSolutionV1.Data.EntityFrameworkCore
 
         }
 
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.ApplyConfiguration(new AppConfigConfiguration());
+            modelBuilder.ApplyConfiguration(new ProductConfiguration());
+        }
+
         public DbSet<Product> Products { get; set; }
 
         public DbSet<ProductCategory> ProductCategories { get; set; }
+
+        public DbSet<AppConfig> AppConfigs { get; set; }
     }
 }

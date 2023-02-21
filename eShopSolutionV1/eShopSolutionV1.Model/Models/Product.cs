@@ -20,5 +20,9 @@ namespace eShopSolutionV1.Model.Models
         public int ViewCount { set; get; }
 
         public DateTime DateCreated { set; get; }
+
+        public int ProductCategoryId { set; get; }
+
+        public ProductCategory ProductCategory { set; get; }
     }
 }

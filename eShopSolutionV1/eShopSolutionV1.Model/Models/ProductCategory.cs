@@ -1,4 +1,5 @@
-﻿using System;
+﻿using eShopSolutionV1.Model.Enums;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,11 +9,16 @@ namespace eShopSolutionV1.Model.Models
 {
     public class ProductCategory
     {
-
         public int Id { set; get; }
+
         public int SortOrder { set; get; }
+
         public bool IsShowOnHome { set; get; }
+
         public int? ParentId { set; get; }
+
         public Status Status { set; get; }
+
+        public List<Product> Products { set; get; }
     }
 }
