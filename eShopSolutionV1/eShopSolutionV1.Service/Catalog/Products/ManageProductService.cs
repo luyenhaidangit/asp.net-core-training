@@ -111,7 +111,17 @@ namespace eShopSolutionV1.Service.Catalog.Products
 
         public async Task<int> Update(ProductUpdateRequest request)
         {
-            throw new NotImplementedException();
+            Product product = await _context.Products.FindAsync(request.Id);
+
+            if (product == null)
+            {
+                throw new EShopSolutionException("Can not find a product:" + request.Id);
+            }
+
+            product.Name = request.Name;
+
+            return await _context.SaveChangesAsync();
+
         }
 
         public Task<int> UpdatePrice(int productId, decimal newPrice)
