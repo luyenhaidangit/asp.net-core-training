@@ -4,11 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace eShopSolutionV1.Service.Catalog.Products.Dtos
+namespace eShopSolutionV1.Service.Catalog.Products.Dtos.Manage
 {
     public class ProductCreateRequest
     {
         public int Id { set; get; }
+
+        public string Name { set; get; }
 
         public decimal Price { set; get; }
 

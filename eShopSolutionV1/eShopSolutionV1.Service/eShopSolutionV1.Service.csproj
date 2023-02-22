@@ -6,4 +6,10 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\eShopSolutionV1.Data\eShopSolutionV1.Data.csproj" />
+    <ProjectReference Include="..\eShopSolutionV1.Model\eShopSolutionV1.Model.csproj" />
+    <ProjectReference Include="..\eShopSolutionV1.Utilities\eShopSolutionV1.Utilities.csproj" />
+  </ItemGroup>
+
 </Project>

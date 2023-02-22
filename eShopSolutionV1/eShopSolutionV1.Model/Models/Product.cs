@@ -11,6 +11,8 @@ namespace eShopSolutionV1.Model.Models
     {
         public int Id { set; get; }
 
+        public string Name { set; get; }
+
         public decimal Price { set; get; }
 
         public decimal OriginalPrice { set; get; }

@@ -43,6 +43,7 @@ namespace eShopSolutionV1.Data.Extensions
                 new Product()
                 {
                     Id = 1,
+                    Name = "Demo",
                     DateCreated = DateTime.Now,
                     OriginalPrice = 100000,
                     Price = 200000,

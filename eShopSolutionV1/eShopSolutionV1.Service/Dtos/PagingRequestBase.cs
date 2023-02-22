@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace eShopSolutionV1.Service.Dtos
 {
-    public class PageViewModel<T>
+    public class PagingRequestBase
     {
-        public List<T> Items { set; get; }
+        public int PageIndex { get; set; }
 
-        public int TotalRecord { set; get; }
+        public int PageSize { get; set; }
     }
 }
