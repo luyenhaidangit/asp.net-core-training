@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace eShopSolutionV1.Service.Dtos
+namespace eShopSolutionV1.ViewModel.Common
 {
     public class PagingRequestBase
     {

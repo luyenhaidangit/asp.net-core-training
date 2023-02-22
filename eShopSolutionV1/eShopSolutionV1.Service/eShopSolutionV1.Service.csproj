@@ -10,6 +10,8 @@
     <ProjectReference Include="..\eShopSolutionV1.Data\eShopSolutionV1.Data.csproj" />
     <ProjectReference Include="..\eShopSolutionV1.Model\eShopSolutionV1.Model.csproj" />
     <ProjectReference Include="..\eShopSolutionV1.Utilities\eShopSolutionV1.Utilities.csproj" />
+    <ProjectReference Include="..\eShopSolutionV1.ViewModel\eShopSolutionV1.ViewModel.csproj" />
+	  <FrameworkReference Include="Microsoft.AspNetCore.App" />
   </ItemGroup>
 
 </Project>

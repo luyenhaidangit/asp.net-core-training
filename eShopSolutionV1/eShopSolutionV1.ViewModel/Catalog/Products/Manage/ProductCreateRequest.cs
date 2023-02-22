@@ -1,10 +1,11 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Http;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace eShopSolutionV1.Service.Catalog.Products.Dtos.Manage
+namespace eShopSolutionV1.ViewModel.Catalog.Products.Manage
 {
     public class ProductCreateRequest
     {
@@ -17,5 +18,7 @@ namespace eShopSolutionV1.Service.Catalog.Products.Dtos.Manage
         public decimal OriginalPrice { set; get; }
 
         public int Stock { set; get; }
+
+        public IFormFile Image { set; get; }
     }
 }

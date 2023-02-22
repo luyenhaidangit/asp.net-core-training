@@ -25,6 +25,7 @@ namespace eShopSolutionV1.Data.EntityFrameworkCore
             // Config using Fluent API
             modelBuilder.ApplyConfiguration(new AppConfigConfiguration());
             modelBuilder.ApplyConfiguration(new ProductConfiguration());
+            modelBuilder.ApplyConfiguration(new ProductImageConfiguration());
 
             modelBuilder.ApplyConfiguration(new AppUserConfiguration());
             modelBuilder.ApplyConfiguration(new AppRoleConfiguration());
@@ -43,6 +44,8 @@ namespace eShopSolutionV1.Data.EntityFrameworkCore
         public DbSet<Product> Products { get; set; }
 
         public DbSet<ProductCategory> ProductCategories { get; set; }
+
+        public DbSet<ProductImage> ProductImages { get; set; }
 
         public DbSet<AppConfig> AppConfigs { get; set; }
 

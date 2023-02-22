@@ -26,5 +26,7 @@ namespace eShopSolutionV1.Model.Models
         public int ProductCategoryId { set; get; }
 
         public ProductCategory ProductCategory { set; get; }
+
+        public List<ProductImage> ProductImages { get; set; }
     }
 }

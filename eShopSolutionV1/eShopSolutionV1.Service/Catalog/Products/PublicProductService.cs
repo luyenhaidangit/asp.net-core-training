@@ -1,7 +1,7 @@
 ﻿using eShopSolutionV1.Data.EntityFrameworkCore;
 using eShopSolutionV1.Service.Catalog.Products.Dtos;
-using eShopSolutionV1.Service.Catalog.Products.Dtos.Public;
-using eShopSolutionV1.Service.Dtos;
+using eShopSolutionV1.ViewModel.Catalog.Products.Public;
+using eShopSolutionV1.ViewModel.Common;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -29,9 +29,6 @@ namespace eShopSolutionV1.Service.Catalog.Products
             if(request.CategoryId.HasValue && request.CategoryId > 0)
             {
                 query = query.Where(p=> p.ProductCategoryId== request.CategoryId);
-            }
-            {
-
             }
             // Paging
             int totalRow = await query.CountAsync();
