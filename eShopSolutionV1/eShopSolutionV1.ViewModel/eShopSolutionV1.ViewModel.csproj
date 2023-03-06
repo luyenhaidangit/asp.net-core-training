@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <Folder Include="Catalog\ProductImages\Public\" />
+    <Folder Include="Catalog\Products\Public\" />
   </ItemGroup>
 
 </Project>

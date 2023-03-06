@@ -1,6 +1,7 @@
 ﻿using eShopSolutionV1.Data.EntityFrameworkCore;
 using eShopSolutionV1.Model.Models;
 using eShopSolutionV1.Service.Catalog.Products.Dtos;
+using eShopSolutionV1.Service.Catalog.Products.Dtos.Public;
 using eShopSolutionV1.Service.Common;
 using eShopSolutionV1.Utilities.Exceptions;
 using eShopSolutionV1.ViewModel.Catalog.ProductImages.Manage;
@@ -101,42 +102,42 @@ namespace eShopSolutionV1.Service.Catalog.Products
             throw new NotImplementedException();
         }
 
-        public async Task<PageResult<ProductViewModel>> GetAllPaging(GetProductPagingRequest request)
-        {
-            // Select join
-            var query = from p in _context.Products
-                        join c in _context.ProductCategories on p.ProductCategoryId equals c.Id
-                        select p;
-            // Filter
-            if (!string.IsNullOrEmpty(request.KeyWord))
-            {
-                query = query.Where(x => x.Name.Contains(request.KeyWord));
-            }
+        //public async Task<PageResult<ProductViewModel>> GetAllPaging(GetProductPagingRequest request)
+        //{
+        //    // Select join
+        //    var query = from p in _context.Products
+        //                join c in _context.ProductCategories on p.ProductCategoryId equals c.Id
+        //                select p;
+        //    // Filter
+        //    if (!string.IsNullOrEmpty(request.KeyWord))
+        //    {
+        //        query = query.Where(x => x.Name.Contains(request.KeyWord));
+        //    }
 
-            if(request.CategoryIds.Count> 0)
-            {
-                query = query.Where(p => request.CategoryIds.Contains(p.ProductCategoryId));
-            }
-            // Paging
-            int totalRow = await query.CountAsync();
+        //    if(request.CategoryIds.Count> 0)
+        //    {
+        //        query = query.Where(p => request.CategoryIds.Contains(p.ProductCategoryId));
+        //    }
+        //    // Paging
+        //    int totalRow = await query.CountAsync();
 
-            var data = await query.Skip((request.PageIndex - 1) * request.PageSize).Take(request.PageSize).Select(p=>
-                new ProductViewModel()
-                {
-                    Id = p.Id,
-                    Name = p.Name,
-                    OriginalPrice= p.OriginalPrice,
-                    Price= p.Price,
-                }).ToListAsync();
+        //    var data = await query.Skip((request.PageIndex - 1) * request.PageSize).Take(request.PageSize).Select(p=>
+        //        new ProductViewModel()
+        //        {
+        //            Id = p.Id,
+        //            Name = p.Name,
+        //            OriginalPrice= p.OriginalPrice,
+        //            Price= p.Price,
+        //        }).ToListAsync();
 
-            var pageResult = new PageResult<ProductViewModel>()
-            {
-                TotalRecord= totalRow,
-                Items = data,
-            };
+        //    var pageResult = new PageResult<ProductViewModel>()
+        //    {
+        //        TotalRecord= totalRow,
+        //        Items = data,
+        //    };
 
-            return pageResult;
-        }
+        //    return pageResult;
+        //}
 
         public async Task<int> Update(ProductUpdateRequest request)
         {

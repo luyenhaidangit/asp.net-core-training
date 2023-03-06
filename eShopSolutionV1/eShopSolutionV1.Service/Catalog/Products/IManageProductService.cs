@@ -1,4 +1,5 @@
 ﻿using eShopSolutionV1.Service.Catalog.Products.Dtos;
+using eShopSolutionV1.Service.Catalog.Products.Dtos.Public;
 using eShopSolutionV1.ViewModel.Catalog.ProductImages.Manage;
 using eShopSolutionV1.ViewModel.Catalog.Products.Manage;
 using eShopSolutionV1.ViewModel.Common;
@@ -21,7 +22,7 @@ namespace eShopSolutionV1.Service.Catalog.Products
 
         Task<List<ProductViewModel>> GetAll();
 
-        Task<PageResult<ProductViewModel>> GetAllPaging(GetProductPagingRequest request);
+        //Task<PageResult<ProductViewModel>> GetAllPaging(GetProductPagingRequest request);
 
         Task<int> UpdatePrice(int productId, decimal newPrice);
 
